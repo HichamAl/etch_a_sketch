@@ -10,10 +10,13 @@ for (let i = 0; i < 256; i++){
     const square = document.createElement("div");
     square.style.backgroundColor = "yellow";
     square.style.border = "thin solid #00FF00";  
-
     square.style.width = `50px`;
     square.style.height = `50px`;
-
     container.appendChild(square);
+
+    square.addEventListener("mouseover", ()=>{
+        square.style.backgroundColor = `red`;
+    });
 }
+
 
