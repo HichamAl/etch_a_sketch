@@ -1,10 +1,5 @@
 // flex container
 const container = document.querySelector("#container");
-container.style.display = "flex";
-container.style.flexWrap = "wrap";
-
-container.style.width = `832px`;
-container.style.height = `832px`;
 
 for (let i = 0; i < 256; i++){
     const square = document.createElement("div");
@@ -24,7 +19,7 @@ for (let i = 0; i < 256; i++){
 const button = document.querySelector("#getGridSize");
 button.addEventListener("click", ()=> {
     const squareAmount = prompt("Give a number for the amount of squares");
-    const amountOfDivs = squareAmount * squareAmount;
+    let amountOfDivs = squareAmount * squareAmount;
 
     // remove divs
     const container = document.querySelector("#container");
@@ -38,7 +33,7 @@ button.addEventListener("click", ()=> {
         const square = document.createElement("div");
         square.style.backgroundColor = "yellow";
         square.style.border = "thin solid #00FF00";  
-        let squareSize = 832 / squareAmount -2 ;
+        let squareSize = 832 / squareAmount - 2 ;
 
         square.style.width = `${squareSize}px`;
         square.style.height = `${squareSize}px`;
