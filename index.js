@@ -1,10 +1,8 @@
-// flex container
 const container = document.querySelector("#container");
 
 for (let i = 0; i < 256; i++){
     const square = document.createElement("div");
-    square.style.backgroundColor = "yellow";
-    square.style.border = "thin solid #00FF00";  
+    square.classList.add("square");
     square.style.width = `50px`;
     square.style.height = `50px`;
     container.appendChild(square);
@@ -18,21 +16,22 @@ for (let i = 0; i < 256; i++){
 // max of 100 squares also 
 const button = document.querySelector("#getGridSize");
 button.addEventListener("click", ()=> {
-    const squareAmount = prompt("Give a number for the amount of squares");
+    let squareAmount;
+
+    do {
+        squareAmount = Number(prompt("Input a number between 1-100:"));
+    } while (isNaN(squareAmount) || squareAmount < 1 || squareAmount > 100);
+
     let amountOfDivs = squareAmount * squareAmount;
 
     // remove divs
     const container = document.querySelector("#container");
-    for (let i = 0; i < 256; i++){
-        const div = container.firstElementChild;
-        container.removeChild(div);
-    }
+    while (container.firstChild) container.removeChild(container.firstChild);
 
     // create new grid
     for (let i = 0; i < amountOfDivs; i++){
         const square = document.createElement("div");
-        square.style.backgroundColor = "yellow";
-        square.style.border = "thin solid #00FF00";  
+        square.classList.add("square"); 
         let squareSize = 832 / squareAmount - 2 ;
 
         square.style.width = `${squareSize}px`;
