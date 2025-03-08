@@ -7,9 +7,12 @@ for (let i = 0; i < 256; i++){
     square.style.height = `50px`;
     container.appendChild(square);
 
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    let rgbValue = "#" + randomColor;
     square.addEventListener("mouseover", ()=>{
-        square.style.backgroundColor = `red`;
+        square.style.backgroundColor = rgbValue;
     });    
+
 }
 
 // add later, make sure user can only put in a number not a string 
@@ -39,9 +42,11 @@ button.addEventListener("click", ()=> {
 
         container.appendChild(square); 
 
+        let randomColor = Math.floor(Math.random()*16777215).toString(16);
+        let rgbValue = "#" + randomColor;
         square.addEventListener("mouseover", ()=>{
-            square.style.backgroundColor = `red`;
-        });    
+        square.style.backgroundColor = rgbValue;
+    });      
     }
     
 });
